@@ -1,0 +1,15 @@
+default:
+    - 'test'
+    - 'build'
+
+lint:
+    - 'jshint'
+
+test:
+    - 'lint'
+    - 'karma'
+
+build:
+    - 'clean'
+    - 'concat'
+    - 'copy'

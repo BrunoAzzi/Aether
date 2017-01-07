@@ -1,0 +1,37 @@
+options:
+
+    logLevel: 'WARN'
+
+    frameworks: ['jasmine']
+
+    files: [
+        'test/**/*.js'
+    ]
+
+    preprocessors:
+        'app/js/**/*.js': ['coverage']
+
+    browsers: ['PhantomJS']
+
+    phantomjsLauncher:
+        exitOnResourceError: true
+
+unit:
+
+    reporters: ['mocha']
+
+    singleRun: true
+
+coverage:
+
+    reporters: ['coverage']
+
+    singleRun: true
+
+    coverageReporter:
+        dir : '../coverage/'
+        reporters: [
+            { type: 'text' },
+            { type: 'text-summary' },
+            { type: 'html', subdir: 'html-report' },
+        ]

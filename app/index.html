@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="AetherWeatherApp" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Aether - Weather</title>
+        <link rel="icon" href="../../favicon.ico">
+        <link href="app.css" rel="stylesheet">
+    </head>
+
+    <body ng-controller="WeatherController">
+
+        <div class="container">
+            <div class="row upper-row">
+                <div class="col-md-3 col-offse sidebar">
+                    <form novalidate class="form-group">
+                        <label>Search a city:</label>
+                        <div class="inner-addon right-addon">
+                            <i class="glyphicon glyphicon-search"></i>
+                            <input type="text" ng-model="city" class="form-control" placeholder="Search" />
+                            <input type="submit" ng-click="search(city)" style="height: 0px; width: 0px; border: none; padding: 0px;" hidefocus="true" />
+                        </div>
+                    </form>
+                    <div class="response-group">
+                        <ul class="list-group">
+                            <!-- <li class="list-group-item"><a>Porta ac consectetur ac</a></li> -->
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-1">
+
+                </div>
+
+                <div class="col-md-8 main">
+                    <div class="row">
+                        <div class="">
+                            <h1 ng-if="now.data.name && now.data.sys.country" >{{now.data.name}}, {{now.data.sys.country}}</h1>
+                            <h3 g-if="now.data.dt">{{now.data.dt}}</h3>
+                            <h4 g-if="now.data.weather[0].main">{{now.data.weather[0].main}}</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h1 ng-if="now.data.main.temp"><i></i>{{convertToCelsius(now.data.main.temp)}} <b class="low-emphasis" >&#8451;|&#8457;<b></h1>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 ng-if="now.data.rain">Precipitation: <i></i>{{now.data.rain}}</h1>
+                            <h4 ng-if="now.data.main.humidity">Humidity: <i></i>{{now.data.main.humidity}}</h1>
+                            <h4 ng-if="now.data.wind.speed">Wind: <i></i>{{now.data.wind.speed}}</h1>
+                        </div>
+                    </div>
+                    <!-- <div class="row forecast">
+                        <div ng-repeat="day in fiveDays.data.list" class="col-md-2">
+                            <p>asdasd<p>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+    <script src="vendor.js"></script>
+  </body>
+</html>

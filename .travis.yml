@@ -1,0 +1,29 @@
+sudo: required
+dist: trusty
+language: node_js
+
+node_js:
+    - '4.5'
+
+install:
+    - export DISPLAY=:99.0
+    - sh -e /etc/init.d/xvfb start
+    - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+    - sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+    - sudo apt-get update -q
+    - sudo apt-get install -q google-chrome-stable
+
+before_script:
+    - npm install
+
+script:
+    - npm run test-single-run
+    - "(npm start > /dev/null &)"
+
+deploy:
+    provider: heroku
+    api_key:
+        secure: BHq21yu6+4Xf+fedev6Dd0tDSdGSFbdfDyS8jNsuJ1glxEoh6gXpEsf/d131N1gAsZf6wi2CNikgEHyc/84N6YZBXloSeo5ZWkVk5t2zpwK385AEpENv8we7iukCBQto0kpvJGzebUPVQwGmGOpCkBC31aA5R8NSRzms/6IoihScrjnwrrzzGnjpQ0+2pnLSZqqKqLjIr3Ldpyn6bbXRYT3Krz9bvNSGfDzV5Jg/5SNYcfc72V+UimtqN9dLXppEV3wdv+4Szs5A3zHo2h7wrKg7TtGrblXFE6dfwpMuCrdr4kA8uO5PWVCfJ/7awlLxJJTITdjn1HEiLp8iTE4SBO52lDxjR/qA/2TKh4VtNkQhPwJIIdSCZprfjfwhhSaAQIyQXOS6iw+U9ImSeYgwfc6UgXRZiA9nNVWFmNEwTiE9+Ol2KiBQRkbeb412WwmwwTwHnECKpiG9zTn+w2mwWl+rRCyWClFxqAP+su1tbctKiNRQb1YtmX5oFgCigbkaRo3Ezg6m8IWavmMLbPOLB8VRs16r0pBInoD4fxBuWF0n3U868P+ZaCelFk6KnVdqpgscTcETAykJA5HIlr+xQQj6V0oP4/SDoluwSlKA2RDthrlaaR1+NzPwbn8h4NF7R4aVTZ9OHFg6o6fgJSqcVzdW1Z+bOSdTtq3RHo+6EKc=
+    app: aurum-challenge
+    on:
+        repo: BrunoAzzi/Aether

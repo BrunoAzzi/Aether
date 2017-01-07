@@ -1,0 +1,60 @@
+body {
+    min-width: 100%;
+    line-height: 1.5;
+    background-color: #252830;
+    color: #cfd2da;
+}
+
+.list-group-item {
+    border: none;
+}
+
+.inner-addon .form-control {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.form-control {
+    box-shadow: none;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    line-height: 1.25;
+    color: #fff;
+    background-color: #434857;
+    font-weight: 300;
+    background-image: none;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.5rem;
+    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+ul li.list-group-item {
+    background-color: #252830;
+}
+
+.upper-row {
+    padding-top: 5%;
+}
+
+.inner-addon {
+  position: relative;
+}
+
+/* style glyph */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align glyph */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }

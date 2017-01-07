@@ -1,0 +1,20 @@
+index:
+    files:
+        'dist/index.html':
+            - 'app/index.html'
+
+css:
+    files:
+        'dist/app.css':
+            - 'app/bower_components/bootstrap/dist/css/bootstrap.min.css'
+            - 'app/css/app.css'
+
+js:
+    files:
+        'dist/vendor.js':
+            - 'app/bower_components/jquery/dist/jquery.min.js'
+            - 'app/bower_components/moment/min/moment-with-locales.min.js'
+            - 'app/bower_components/angular/angular.min.js'
+            - 'app/bower_components/bootstrap/dist/js/bootstrap.min.js'
+            - 'app/bower_components/angular-openweathermap-api-factory/dist/angular-openweathermap-api-factory.min.js'
+            - 'app/js/app.js'

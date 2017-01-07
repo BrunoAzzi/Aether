@@ -1,0 +1,6 @@
+all:
+    - Gruntfile.js
+    - grunt/*.js
+    - test/*.js
+    - main.js
+    - app/js/**/*.js

@@ -1,0 +1,25 @@
+{
+  "name": "aether",
+  "description": "Aurum's weather challenge",
+  "main": "",
+  "authors": [
+    "Bruno Antunes Azzi"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/BrunoAzzi/Aether",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "app/bower_components"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "angular": "^1.6.1",
+    "angular-openweathermap-api-factory": "^0.6.0",
+    "moment": "^2.17.1"
+  }
+}
